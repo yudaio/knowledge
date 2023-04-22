@@ -2,6 +2,8 @@ const quiz = [
   {
     question: 'ゲーム史上、最も売れたゲーム機はどれ？',
     answers: [ 'スーパーファミコン', 'PlayStation 2', 'ニンテンドーDS', 'Xbox 360'],
+    //answersのsを付けることで並列（複数の選択肢）にできる。constは定義するという意味。
+  
     correct: 'ニンテンドーDS'
   }, {
     question: '糸井重里が企画に関わった、任天堂の看板ゲームといえば？',
@@ -17,7 +19,9 @@ const quiz = [
 const $window = window;
 const $doc = document;
 const $question = $doc.getElementById('js-question');
+//getElementByIdはidはページ内に1つのみ存在可能。2以上同じ名称のidがある場合はエラーとなる。今回はjs-questionをidとしている。
 const $buttons = $doc.querySelectorAll('.btn');
+//$マークはhtmlのオブジェクトが入っているという意味。またリファクタリングと言って何度も出てくる命令を1つにまとめることが望ましい。
 
 const quizLen = quiz.length;
 let quizCount = 0;
